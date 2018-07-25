@@ -15,6 +15,7 @@ Router.map(function() {
       this.route('followers', { path: ':user_login/followers'}, function() { });
       this.route('orgs', { path: ':user_login/orgs'}, function() { });
     });
+    this.route('organizations');
   });
 });
 
