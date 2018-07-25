@@ -13,6 +13,7 @@ Router.map(function() {
       this.route('show', { path: ':user_login' });
       this.route('repos', { path: ':user_login/repos'}, function() { });
       this.route('followers', { path: ':user_login/followers'}, function() { });
+      this.route('orgs', { path: ':user_login/orgs'}, function() { });
     });
   });
 });
