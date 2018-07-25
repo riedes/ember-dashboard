@@ -1,0 +1,136 @@
+/**
+ * Grids - Container:
+ * `@include container;` on parent element (applied on `.style-guide-container-example`). Prepares the element for the grid.
+ *
+ * By default, a container takes up 16 columns. This can be changed at `app/styles/base/_grid.scss`.
+ *
+ * Or, by explicitly defining it in `@include container(...)`. ie `@include container(12)`.
+ *
+ *     @example
+ *     .style-guide-container-example
+ *       .basic-grid
+ *         .left @include span(6 of 16 first)
+ *         .right @include span(10 of 16 last)
+ */
+
+/**
+ * Grids - Span:
+ * `@include span(16 of 16 first);` (applied on `.basic-grid`). Indicates that `.basic-grid`, takes the full span of 16 columns.
+ *
+ * `@include span(6 of 16 first);` (applied on `.left`) will take up 6 of 16 columns.
+ *
+ * `@include span(10 of 16 last);` (applied on `.right`) will take up 10 of 16 columns.
+ *
+ * `first` or `last` in `@include span(...);` adds or removes the gutter on the right side of the element respectively.
+ *
+ *     @example
+ *     .style-guide-container-example
+ *       .basic-grid
+ *         .left @include span(6 of 16 first)
+ *         .right @include span(10 of 16 last)
+ */
+
+/**
+ * Grids - Nested:
+ *  An example of a nested grid.
+ *
+ *     @example
+ *     .style-guide-container-example
+ *       .nested-grid
+ *         .left @include span(4 of 16 first)
+ *         .right @include span(12 of 16 last)
+ *           .top-of-right @include span(12 of 12 last)
+ *           .left-of-right @include span(6 of 12 first)
+ *           .right-of-right @include span(6 of 12 last)
+ */
+
+@import "susy/susy";
+
+$susy: (
+  columns: 16,
+  // container: 1200px, // Comment if fluid layout
+  // global-box-sizing: border-box,
+  // output: isolate,
+  // debug: (image: columns)
+  // debug: (
+  //   image: show, // (hide | show | show-columns | show-baseline)
+  //   output: overlay, // (background | overlay)
+  //   toggle: left top, // (left | right and top | bottom)
+  // )
+);
+
+.style-guide-container-example { @include container;
+  .basic-grid                  { @include span(16 of 16 last); text-align: center;
+    .left                      { @include span(6 of 16 first); background-color: lighten($blue, 10%); }
+    .right                     { @include span(10 of 16 last); background-color: lighten($blue, 10%); }
+  }
+  .nested-grid                 { @include span(16 of 16 last); text-align: center; margin: 10px 0 0 0;
+    .left                      { @include span(4 of 16 first); background-color: lighten($blue, 10%); }
+    .right                     { @include span(12 of 16 last); background-color: lighten($blue, 10%);
+      .top-of-right            { @include span(12 of 12 last); background-color: lighten($blue, 20%); }
+      .left-of-right           { @include span(6 of 12 first); background-color: lighten($blue, 20%); }
+      .right-of-right          { @include span(6 of 12 last); background-color: lighten($blue, 20%); }
+    }
+  }
+}
+
+
+
+// The interaction between padding and width changes depending on your given box-model.
+// In the browser-default content-box model, width and padding are added together, so that an
+// item with span(3) and prefix(2) will occupy a total of 5 columns. In the recommended
+// border-box model, padding is subtracted from the width, so that an item with span(3) will
+// always occupy 3 columns, no matter what padding is applied.
+@include border-box-sizing;
+
+html, body {
+  height: 100%;
+  position: relative;
+  background: #fcfcfc;
+}
+
+body {
+  @include container;
+  overflow-x: hidden;
+
+  > .ember-view:first-of-type {
+    height: 100%;
+    position: relative;
+
+    > .content {
+      height: 100%;
+      position: relative;
+    }
+  }
+
+  // .content {
+  //   @include span(16 of 16);
+  // }
+
+  .wrap {
+    @include span(24 of 24);
+
+    &.-padded {
+      @include span(24 of 24 inside);
+    }
+  }
+
+  .inner {
+    @include padding($small-spacing);
+  }
+}
+
+// @import "neat-helpers"; // or "../neat/neat-helpers" when not in Rails
+//
+// // Neat Overrides
+// // $column: 90px;
+// // $gutter: 30px;
+// // $grid-columns: 12;
+// // $max-width: em(1088);
+//
+// // Neat Breakpoints
+// $medium-screen: em(640);
+// $large-screen: em(860);
+//
+// $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
+// $large-screen-up: new-breakpoint(min-width $large-screen 8);

@@ -7,6 +7,14 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('dashboard', function() {
+    this.route('repositories');
+    this.route('users', function() {
+      this.route('show', { path: ':user_login' });
+      this.route('repos', { path: ':user_login/repos'}, function() { });
+      this.route('followers', { path: ':user_login/followers'}, function() { });
+    });
+  });
 });
 
 export default Router;

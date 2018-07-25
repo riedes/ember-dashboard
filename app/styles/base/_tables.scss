@@ -1,0 +1,202 @@
+/**
+ * Tables:
+ * `table` - The HTML table model allows authors to arrange data -- text, preformatted text, images, links, forms, form fields, other tables, etc. -- into rows and columns of cells.
+ *
+ *     @example
+ *     table
+ *       tr
+ *         th.status-bar
+ *         th Table header 1
+ *         th Table header 2
+ *         th Table header 3
+ *       tr
+ *         td.status-bar.-green
+ *         td Division 1
+ *         td Division 2
+ *         td Division 3
+ *       tr
+ *         td.status-bar.-yellow
+ *         td.green Division 3
+ *         td.yellow Division 2
+ *         td.red Division 3
+ */
+
+table {
+  @include font-feature-settings("kern", "liga", "tnum");
+  @include margin(0);
+  background-color: #fff;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid $base-border-color;
+
+  th {
+    @include background($gray);
+    @include padding($small-spacing);
+    @include position(relative);
+    border-bottom: $base-border;
+    font-weight: bold;
+    text-align: left;
+    font-size: 12px;
+
+    &.status-bar {
+      @include padding(0);
+      width: 4px;
+    }
+
+    &.-center {
+      text-align: center;
+    }
+
+    &.-right {
+      text-align: right;
+    }
+
+    i.fa-filter {
+      cursor: pointer;
+    }
+
+    .pop-over {
+      position: absolute;
+      left: 0;
+      top: 80%;
+    }
+
+    &.-red {
+      background-color: $red;
+      border-left: 1px solid $red;
+      border-bottom: 1px solid $red;
+    }
+  }
+
+  tr {
+    &.disabled {
+      td {
+        border-bottom: 1px solid $gainsboro;
+        background-color: $light-gray;
+        color: $asphalt;
+      }
+    }
+    &.clickable {
+      cursor: pointer;
+    }
+    &.shaded {
+      background: $almost-white;
+    }
+    &.grayed {
+      color: $cement;
+    }
+  }
+
+  td {
+    @include padding($small-spacing);
+    @include position(relative);
+    border-bottom: $base-border;
+
+    &.-bold {
+      font-weight: bold;
+    }
+
+    &.-no-border-bottom {
+      border-bottom: none;
+    }
+
+    &.-line-through {
+      text-decoration: line-through;
+    }
+
+    &.status-bar {
+      @include padding(0);
+      width: 4px;
+
+      &.-green {
+        background-color: $green;
+        border-left: 1px solid $green;
+        border-bottom: 1px solid $green;
+      }
+
+      &.-yellow {
+        background-color: $yellow;
+        border-left: 1px solid $yellow;
+        border-bottom: 1px solid $yellow;
+      }
+
+      &.-red {
+        background-color: $red;
+        border-left: 1px solid $red;
+        border-bottom: 1px solid $red;
+      }
+
+      &.-gray {
+        background-color: $cement;
+        border-left: 1px solid $cement;
+        border-bottom: 1px solid $cement;
+      }
+    }
+
+    &.-green {
+      border-bottom: 1px solid $success-color;
+      background-color: $success-background-color;
+      color: $success-color;
+    }
+
+    &.-yellow {
+      border-bottom: 1px solid $warning-color;
+      background-color: $warning-background-color;
+      color: $warning-color;
+    }
+
+    &.-red {
+      border-bottom: 1px solid $error-color;
+      background-color: $error-background-color;
+      color: $error-color;
+    }
+
+    &.-blue {
+      border-bottom: 1px solid $info-color;
+      background-color: $info-background-color;
+      color: $info-color;
+    }
+
+    &.-gray {
+      border-bottom: 1px solid $cement;
+      background-color: $cement;
+    }
+
+    &.-charcoal {
+      border-bottom: 1px solid $charcoal;
+      background-color: $charcoal;
+      color: $white;
+    }
+
+    &.-white {
+      border-bottom: 1px solid $charcoal;
+      background-color: $white;
+      color: $charcoal;
+    }
+
+    &.-center {
+      text-align: center;
+    }
+
+    &.-right {
+      text-align: right;
+    }
+  }
+
+  tr,
+  td,
+  th {
+    vertical-align: middle;
+  }
+
+  td, th {
+    &.with-divider {
+      border-left: 2px solid $gray;
+    }
+    &.numeric {
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+}

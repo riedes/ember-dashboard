@@ -5,5 +5,10 @@
 
     Setting `disableAnalytics` to true will prevent any data from being sent.
   */
-  "disableAnalytics": false
+  "disableAnalytics": false,
+  "usePods": true,
+  "proxy": "https://api.github.com",
+  "liveReload": true,
+  "port": 4900,
+  "host": "0.0.0.0"
 }

@@ -1,0 +1,110 @@
+// Responsive
+$mobile-width: 320px;
+$desktop-width: 480px;
+
+// $tablet-width: 768px;
+// $desktop: 1024px;
+
+// Typography
+$base-font-family: "Open Sans", $helvetica;
+$heading-font-family: "Montserrat", $base-font-family;
+
+// Font Sizes
+$base-font-size: 14px;
+$small-font-size: 12px;
+
+// Line height
+$line-height: 1.6;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 4px;
+$base-spacing: $line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Prototyping background colors
+$prototype-pink: rgba(234, 159, 195, 0.8);
+$prototype-teal: rgba(113, 218, 210, 0.8);
+$prototype-amber: rgba(200, 200, 2, 0.8);
+
+// Colors
+$white: #fff;
+$black: #000;
+$green: #9acc66;
+$red: #fb6b5b;
+$blue: #5dcff3;
+$yellow: #F3CA2D;
+$orange: #E28560;
+$purple: #5C5594;
+$pink: #EE87B2;
+$teal: #00C4BC;
+$gray: #E8E8E8;
+
+// Shades of gray - Light to dark
+$snow-white: #FDFDFA;
+$almost-white: #FAFAF7;
+$light-gray: #F7F7F7;
+$gray: #F4F3F2;
+$gainsboro: #DCDCDC;
+$cement: #B4B4B4;
+$asphalt: #8F8D8B;
+$charcoal: #515151;
+$light-black: #424140;
+$almost-black: #282827;
+
+$light-green: lighten($green, 38%);
+$light-blue: lighten($blue, 32%);
+$light-red: lighten($red, 31%);
+$light-yellow: lighten($yellow, 41%);
+
+$dark-green: darken($green, 5%);
+$dark-blue: darken($blue, 30%);
+
+// Font Colors
+$base-background-color: #fff;
+$base-font-color: $charcoal;
+$action-color: $blue;
+
+// Border
+$base-border-color: $gray;
+$base-border: 1px solid $base-border-color;
+
+// Shadows
+$base-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+$base-box-shadow-inset: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Success
+$success-border: 1px solid lighten($green, 15%);
+$success-background-color: lighten($green, 35%);
+$success-color: darken($green, 20%);
+
+// Info
+$info-border: 1px solid lighten($blue, 15%);
+$info-background-color: lighten($blue, 30%);
+$info-color: darken($blue, 10%);
+
+// Errors
+$error-border: 1px solid lighten($red, 15%);
+$error-background-color: lighten($red, 30%);
+$error-color: $red;
+
+// Warnings
+$warning-border: 1px solid darken($yellow, 5%);
+$warning-background-color: lighten($yellow, 35%);
+$warning-color: darken($yellow, 10%);
+
+// Basic
+$basic-border: 1px solid darken($gray, 10%);
+$basic-background-color: $gray;
+$basic-color: darken($gray, 40%);
+
+// Dispatch status colors
+$dispatch-highlight-color: rgba(154, 204, 102, 0.2);
+$dispatch-danger-color: #D64C00;
+$dispatch-warning-color: #F5A432;
+$dispatch-info-color: #33B4EE;

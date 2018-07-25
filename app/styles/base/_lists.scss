@@ -1,0 +1,63 @@
+/**
+ * Lists - Definition list:
+ * `dl, dt` - This attribute sets the style of a list item.
+ *
+ *     @example
+ *     dl
+ *       dt Definition list title
+ *       dd Definition list description
+ */
+
+/**
+ * Lists - Ordered list:
+ * `ol, li` - This attribute sets the style of a list item.
+ *
+ *     @example
+ *     ol
+ *       li Order list item 1
+ *       li Order list item 2
+ *       li Order list item 3
+ */
+
+/**
+ * Lists - Unordered list:
+ * `ul, li` - This attribute sets the style of a list item.
+ *
+ *     @example
+ *     ul
+ *       li Unordered list item 1
+ *       li Unordered list item 2
+ *       li Unordered list item 3
+ */
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &%default-ul {
+    list-style-type: disc;
+    margin-bottom: $small-spacing;
+    padding-left: $base-spacing;
+  }
+
+  &%default-ol {
+    list-style-type: decimal;
+    margin-bottom: $small-spacing;
+    padding-left: $base-spacing;
+  }
+}
+
+dl {
+  margin-bottom: $small-spacing;
+
+  dt {
+    font-weight: bold;
+    margin-top: $small-spacing;
+  }
+
+  dd {
+    margin: 0;
+  }
+}

@@ -1,0 +1,78 @@
+/**
+ * Tags:
+ * `.tag.-green` - Used together with identifying / labelling content.
+ *
+ *     @example
+ *     .tag.-green Green
+ *     .tag.-red Red
+ *     .tag.-yellow Yellow
+ *     .tag.-orange Orange
+ *     .tag.-purple Purple
+ *     .tag.-pink Pink
+ *     .tag.-teal Teal
+ *     .tag.-blue Blue
+ *     .tag.-gray Gray
+ *     .tag.-white White
+ */
+
+/**
+ * Tags - Circular:
+ * `.tag.-circular.-green` - Used together with identifying / labelling content.
+ *
+ *     @example
+ *     .tag.-circular.-green 4
+ *     .tag.-circular.-red 1
+ *     .tag.-circular.-yellow 7
+ *     .tag.-circular.-orange 8
+ *     .tag.-circular.-purple 1
+ *     .tag.-circular.-pink 3
+ *     .tag.-circular.-teal 6
+ *     .tag.-circular.-blue 9
+ *     .tag.-circular.-gray 2
+ *     .tag.-circular.-white 7
+ */
+
+.tag                           { @include appearance(none); -webkit-font-smoothing: antialiased; background-color: $blue;
+                                 border-radius: $base-border-radius / 2; border: none; color: #fff; cursor: pointer; display: inline-block;
+                                 font-family: $base-font-family; font-size: $base-font-size; line-height: 1;
+                                 text-decoration: none; user-select: none; vertical-align: middle;
+                                 @include padding(4px 12px); white-space: nowrap;
+
+  i                            { @include margin(null 8px null null); }
+
+  &:hover, &:focus             { background-color: darken($blue, 5%); color: #fff; }
+  &:disabled                   { cursor: not-allowed; opacity: 0.5; }
+
+  &.-circular                  { @include padding(auto); border-radius: 200px; text-align:center; }
+
+  &.-green                     { background-color: $green;
+    &:hover, &:focus           { background-color: darken($green, 5%); color: #fff; }
+  }
+  &.-red                       { background-color: $red;
+    &:hover, &:focus           { background-color: darken($red, 5%); color: #fff; }
+  }
+  &.-blue                      { background-color: $blue;
+    &:hover, &:focus           { background-color: darken($blue, 5%); color: #fff; }
+  }
+  &.-yellow                    { background-color: $yellow;
+    &:hover, &:focus           { background-color: darken($yellow, 5%); color: #fff; }
+  }
+  &.-orange                    { background-color: $orange;
+    &:hover, &:focus           { background-color: darken($orange, 5%); color: #fff; }
+  }
+  &.-purple                    { background-color: $purple;
+    &:hover, &:focus           { background-color: darken($purple, 5%); color: #fff; }
+  }
+  &.-pink                      { background-color: $pink;
+    &:hover, &:focus           { background-color: darken($pink, 5%); color: #fff; }
+  }
+  &.-teal                      { background-color: $teal;
+    &:hover, &:focus           { background-color: darken($teal, 5%); color: #fff; }
+  }
+  &.-gray                      { background-color: $gray; color: #515151;
+    &:hover, &:focus           { background-color: darken($gray, 5%); }
+  }
+  &.-white                     { background-color: $white; color: #515151;
+    &:hover, &:focus           { background-color: darken($white, 5%); }
+  }
+}

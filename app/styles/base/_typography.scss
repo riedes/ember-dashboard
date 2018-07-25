@@ -1,0 +1,71 @@
+/**
+ * Typograhy - Heading:
+ * `h1, h2, h3, h4, h5, h6` - The elements of typographic style applied to the web.
+ *
+ *     @example
+ *     h1 h1. Heading
+ *     h2 h2. Heading
+ *     h3 h3. Heading
+ *     h4 h4. Heading
+ *     h5 h5. Heading
+ *     h6 h6. Heading
+ */
+
+/**
+ * Typograhy - Paragraph:
+ * `p` - The elements of typographic style applied to the web.
+ *
+ *     @example
+ *     p Lorem #[strong ipsum] dolor sit amet, #[a(href="#") test link] adipiscing elit. Nullam #[em dignissim convallis] est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+ */
+
+body                { @include font-feature-settings("kern", "liga", "pnum"); -webkit-font-smoothing: antialiased; color: $base-font-color; font-family: $base-font-family;
+                      font-size: $base-font-size; line-height: $line-height; }
+
+h1, h2, h3, h4,
+h5, h6              { font-family: $heading-font-family; line-height: $heading-line-height; margin: 0 0 $small-spacing / 2 0; }
+
+h1                  { font-size: $base-font-size * 2.3; }
+h2                  { font-size: $base-font-size * 2.10; }
+h3                  { font-size: $base-font-size * 1.7; }
+h4                  { font-size: $base-font-size * 1.20; }
+h5                  { font-size: $base-font-size; }
+h6                  { font-size: $base-font-size * 0.80; }
+
+p                   { margin: 0 0 $small-spacing 0; }
+
+a                   { color: $action-color; text-decoration: none; transition: color 0.1s linear;
+  &:active,
+  &:focus,
+  &:hover           { color: darken($action-color, 15%); }
+
+  &:active,
+  &:focus           { outline: none; }
+
+  &.-inherit-color  { color: inherit; }
+}
+
+hr                  { border-bottom: $base-border; border-left: none; border-right: none; border-top: none; margin: $base-spacing 0; }
+
+img, picture        { margin: 0; max-width: 100%; }
+
+.tiny-text          {
+  font-size: 12px;
+  color: $cement;
+
+  &.-green {
+    color: $green;
+  }
+
+  &.-red {
+    color: $red;
+  }
+
+  &.-blue {
+    color: $blue;
+  }
+}
+
+.line-through {
+  text-decoration: line-through;
+}

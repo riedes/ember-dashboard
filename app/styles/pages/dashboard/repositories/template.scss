@@ -1,0 +1,27 @@
+.dashboard-repositories {
+  // @include margin($small-spacing * 8 auto null auto);
+  // @include size(800px auto);
+  // background-color: #9acc66;
+
+  h1 {
+    @include margin(null null $small-spacing null);
+  }
+
+  table {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+    position: relative;
+
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    th {
+      background: $white;
+    }
+
+    td {
+      word-wrap: break-word;
+    }
+  }
+}

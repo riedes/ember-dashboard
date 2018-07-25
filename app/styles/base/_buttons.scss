@@ -1,0 +1,246 @@
+/**
+ * Buttons:
+ * `.button.-green` - Used in forms, and other click/touch interaction.
+ *
+ *     @example
+ *     .button.-green Green
+ *     .button.-red Red
+ *     .button.-yellow Yellow
+ *     .button.-orange Orange
+ *     .button.-purple Purple
+ *     .button.-pink Pink
+ *     .button.-teal Teal
+ *     .button.-blue Blue
+ *     .button.-gray Gray
+ *     .button.-gainsboro Gainsboro
+ *     .button.-white White
+ */
+
+/**
+ * Buttons - Rounded:
+ * `.button.-green.-rounded` - Used in forms, and other click/touch interaction.
+ *
+ *     @example
+ *     .button.-green.-rounded Green
+ *     .button.-red.-rounded Red
+ *     .button.-yellow.-rounded Yellow
+ *     .button.-orange.-rounded Orange
+ *     .button.-purple.-rounded Purple
+ *     .button.-pink.-rounded Pink
+ *     .button.-teal.-rounded Teal
+ *     .button.-blue.-rounded Blue
+ *     .button.-gainsboro.-rounded Gainsboro
+ *     .button.-gray.-rounded Gray
+ *     .button.-white.-rounded White
+ */
+
+/**
+ * Buttons - Sizes:
+ * `.button.-green.-mini` - Used in forms, and other click/touch interaction.
+ *
+ *     @example
+ *     .button.-gray.-mini Mini
+ *     .button.-gray.-small Small
+ *     .button.-gray.-medium Medium
+ *     .button.-gray.-large Large
+ *     .button.-gray.-huge Huge
+ *     .button.-gray.-massive Massive
+ */
+
+/**
+ * Buttons - Sizes with icons:
+ * `.button.-green.-mini .fa.fa-leaf` - Used in forms, and other click/touch interaction.
+ *
+ *     @example
+ *     .button.-green.-mini
+ *       i.fa.fa-leaf
+ *       | Mini
+ *     .button.-green.-small
+ *       i.fa.fa-thumbs-up
+ *       | Small
+ *     .button.-green.-medium
+ *       i.fa.fa-truck
+ *       | Medium
+ *     .button.-green.-large
+ *       i.fa.fa-wifi
+ *       | Large
+ *     .button.-green.-huge
+ *       i.fa.fa-tag
+ *       | Huge
+ *     .button.-green.-massive
+ *       i.fa.fa-paw
+ *       | Massive
+ */
+
+/**
+ * Circular buttons:
+ * `.button.-circular.-green .fa.fa-leaf` - Used in forms, and other click/touch interaction.
+ *
+ *     @example
+ *     .button.-circular.-green
+ *       i.fa.fa-leaf
+ *     .button.-circular.-green
+ *       i.fa.fa-arrow-right
+ *     .button.-circular.-red
+ *       i.fa.fa-thumbs-up
+ *     .button.-circular.-yellow
+ *       i.fa.fa-truck
+ *     .button.-circular.-orange
+ *       i.fa.fa-wifi
+ *     .button.-circular.-purple
+ *       i.fa.fa-tag
+ *     .button.-circular.-pink
+ *       i.fa.fa-paw
+ */
+
+/**
+ * Circular buttons - Sizes:
+ * `.button.-circular.-green.-mini .fa.fa-leaf` - Used in forms, and other click/touch interaction.
+ *
+ *     @example
+ *     .button.-circular.-green.-mini
+ *       i.fa.fa-leaf
+ *     .button.-circular.-green.-small
+ *       i.fa.fa-leaf
+ *     .button.-circular.-green.-medium
+ *       i.fa.fa-leaf
+ *     .button.-circular.-green.-large
+ *       i.fa.fa-leaf
+ *     .button.-circular.-green.-huge
+ *       i.fa.fa-leaf
+ *     .button.-circular.-green.-massive
+ *       i.fa.fa-leaf
+ */
+
+.button                        { @include appearance(none); -webkit-font-smoothing: antialiased; background-color: $blue;
+                                 border: none; color: #fff; cursor: pointer; display: inline-block;
+                                 font-family: $base-font-family; font-size: $base-font-size; font-weight: 500; line-height: 1;
+                                 text-decoration: none; user-select: none; vertical-align: middle;
+                                 @include padding(11px 21px); white-space: nowrap;
+
+  i                            { @include margin(null 8px null null); }
+
+  &:hover, &:focus             { background-color: darken($blue, 5%); color: #fff; }
+  &:disabled, &[disabled]      { cursor: not-allowed; opacity: 0.5; }
+
+  &.-default-cursor            { cursor: default; }
+  &.-pointer-cursor            { cursor: pointer; }
+  &.-no-cursor                 { cursor: none; }
+
+  &.-full-width                { width: 100%; }
+
+  &.-rounded                   { border-radius: $base-border-radius; }
+
+  &.-mini                      { @include padding(8px 15px); font-size: $base-font-size * 0.80;
+    i                          { @include margin(null 6px null null); }
+  }
+  &.-small                     { @include padding(10px 20px); font-size: $base-font-size * 0.90;
+    i                          { @include margin(null 6px null null); }
+  }
+  &.-medium                    { @include padding(11px 21px); font-size: $base-font-size;
+    i                          { @include margin(null 8px null null); }
+  }
+  &.-large                     { @include padding(13px 24px); font-size: $base-font-size * 1.10;
+    i                          { @include margin(null 9px null null); }
+  }
+  &.-huge                      { @include padding(14px 27px); font-size: $base-font-size * 1.20;
+    i                          { @include margin(null 10px null null); }
+  }
+  &.-massive                   { @include padding(16px 30px); font-size: $base-font-size * 1.30;
+    i                          { @include margin(null 10px null null); }
+  }
+
+  &.-green                                            { background-color: $green;
+    &:not([disabled]):hover, &::not([disabled]):focus { background-color: darken($green, 5%); color: $white; }
+  }
+  &.-red                                              { background-color: $red;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($red, 5%); color: $white; }
+  }
+  &.-blue                                             { background-color: $blue;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($blue, 5%); color: $white; }
+  }
+  &.-yellow                                           { background-color: $yellow;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($yellow, 5%); color: $white; }
+  }
+  &.-orange                                           { background-color: $orange;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($orange, 5%); color: $white; }
+  }
+  &.-purple                                           { background-color: $purple;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($purple, 5%); color: $white; }
+  }
+  &.-pink                                             { background-color: $pink;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($pink, 5%); color: $white; }
+  }
+  &.-teal                                             { background-color: $teal;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($teal, 5%); color: $white; }
+  }
+  &.-gray                                             { background-color: $gray; color: $charcoal;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($gray, 5%); }
+  }
+  &.-gainsboro                                        { background-color: $gainsboro; color: $white;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($gainsboro, 5%); }
+  }
+  &.-white                                            { background-color: $white; color: $charcoal;
+    &:not([disabled]):hover, &:not([disabled]):focus  { background-color: darken($white, 5%); }
+  }
+
+  &.-block                     { display: block; width: 100%; }
+  &.-center                    { text-align: center; }
+
+  &.-circular                  { border-radius: 24px; padding: 11px;
+    i                          { @include margin(null 0px null null); }
+    &.-mini                    { @include padding(8px); font-size: $base-font-size * 0.80; }
+    &.-small                   { @include padding(10px); font-size: $base-font-size * 0.90; }
+    &.-medium                  { @include padding(11px); font-size: $base-font-size; }
+    &.-large                   { @include padding(13px); font-size: $base-font-size * 1.10; border-radius: 24px; }
+    &.-huge                    { @include padding(14px); font-size: $base-font-size * 1.20; border-radius: 24px; }
+    &.-massive                 { @include padding(16px); font-size: $base-font-size * 1.30; border-radius: 30px; }
+  }
+
+  &.-no-text                   {
+    i                          { @include margin(null 0px null null); }
+  }
+}
+
+.fa-stack                      {
+  i.-green                     { color: $green; }
+  i.-red                       { color: $red; }
+  i.-blue                      { color: $blue; }
+  i.-yellow                    { color: $yellow; }
+  i.-orange                    { color: $orange; }
+  i.-purple                    { color: $purple; }
+  i.-pink                      { color: $pink; }
+  i.-teal                      { color: $teal; }
+  i.-gray                      { color: $gray; }
+  i.-gainsboro                 { color: $white; }
+
+  &:not([disabled]):hover i.-green.fa-circle,
+  &:not([disabled]):focus i.-green.fa-circle   { color: darken($green, 5%); }
+
+  &:not([disabled]):hover i.-red.fa-circle,
+  &:not([disabled]):focus i.-red.fa-circle     { color: darken($red, 5%); }
+
+  &:not([disabled]):hover i.-blue.fa-circle,
+  &:not([disabled]):focus i.-blue.fa-circle    { color: darken($blue, 5%); }
+
+  &:not([disabled]):hover i.-yellow.fa-circle,
+  &:not([disabled]):focus i.-yellow.fa-circle  { color: darken($yellow, 5%); }
+
+  &:not([disabled]):hover i.-orange.fa-circle,
+  &:not([disabled]):focus i.-orange.fa-circle  { color: darken($orange, 5%); }
+
+  &:not([disabled]):hover i.-purple.fa-circle,
+  &:not([disabled]):focus i.-purple.fa-circle  { color: darken($purple, 5%); }
+
+  &:not([disabled]):hover i.-pink.fa-circle,
+  &:not([disabled]):focus i.-pink.fa-circle    { color: darken($pink, 5%); }
+
+  &:not([disabled]):hover i.-teal.fa-circle,
+  &:not([disabled]):focus i.-teal.fa-circle    { color: darken($teal, 5%); }
+
+  &:not([disabled]):hover i.-gray.fa-circle,
+  &:not([disabled]):focus i.-gray.fa-circle    { color: darken($gray, 5%); }
+
+  &:not([disabled]):hover i.-gainsboro.fa-circle,
+  &:not([disabled]):focus i.-gainsboro.fa-circle { color: darken($gainsboro, 5%); }
+}
