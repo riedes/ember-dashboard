@@ -1,0 +1,29 @@
+<div class="dashboard-users-index">
+  <h1>Users</h1>
+    {{paginated-links linkTo="dashboard.users.index"  pageMeta=model.meta.page}}
+  <table>
+    <tr>
+      <th>Username</th>
+      <th>Follower</th>
+      <th>Following</th>
+      <th>Repos</th>
+      <th>Subsciptions</th>
+    </tr>
+
+    {{#each model as |user|}}
+      <tr>
+        <td>{{#link-to "dashboard.users.show" user.id}}{{user.login}}{{/link-to}}</td>
+        <td>{{user.followers_url.length}}</td>
+        <td>{{user.following_url.length}}</td>
+        <td>{{user.repos_url.length}}</td>
+        <td>{{user.subscriptions_url.length}}</td>
+      </tr>
+    {{/each}}
+  </table>
+
+
+</div>
+
+<div class="pagination">
+  {{paginated-links linkTo="dashboard.users.index"  pageMeta=model.meta.page}}
+</div>
