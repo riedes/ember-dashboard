@@ -1,0 +1,63 @@
+<div class="dashboard-users-show">
+  <h1>USER DETAILS</h1>
+
+  <table class="user-details">
+    <tr>
+      <td>
+        <h5> USERNAME </h5>
+
+        <p> {{model.login}} </p>
+      </td>
+
+      <td>
+        <h5> NAME </h5>
+
+        <p> {{model.name}} </p>
+      </td>
+
+      <td>
+        <h5> # OF FOLLOWERS </h5>
+
+        <p> {{model.followers}} </p>
+      </td>
+
+      <td>
+        <h5> # OF FOLLOWING </h5>
+
+        <p> {{model.following}} </p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <h5> EMAIL </h5>
+
+        {{#if model.email}}
+          <p> {{model.email}} </p>
+        {{else}}
+          <p> No email </p>
+        {{/if}}
+      </td>
+
+      <td>
+        <h5> BLOG </h5>
+
+        {{#if model.blog}}
+          <p> {{model.blog}} </p>
+        {{else}}
+          <p> No blog </p>
+        {{/if}}
+      </td>
+
+      <td>
+        <h5> BIO </h5>
+
+        {{#if model.bio}}
+          <p> {{model.bio}} </p>
+        {{else}}
+          <p> No bio </p>
+        {{/if}}
+      </td>
+    </tr>
+  </table>
+</div>
