@@ -1,0 +1,39 @@
+<ul>
+  {{#if model}}
+    {{#if showFirst}}
+      <li>{{#link-to linkTo model.id (query-params page=pageMeta.first) class="button -blue -mini"}}First{{/link-to}}</li>
+    {{/if}}
+
+    {{#if showPrev}}
+      <li>{{#link-to linkTo model.id (query-params page=pageMeta.prev) class="button -blue -mini"}}Prev{{/link-to}}</li>
+    {{/if}}
+
+    {{#if showNext}}
+      <li>{{#link-to linkTo model.id (query-params page=pageMeta.next) class="button -blue -mini"}}Next{{/link-to}}</li>
+    {{/if}}
+
+    {{#if showLast}}
+      <li>{{#link-to linkTo model.id (query-params page=pageMeta.last) class="button -blue -mini"}}Last{{/link-to}}</li>
+    {{/if}}
+  {{else}}
+    {{#if showFirst}}
+      <li>{{#link-to linkTo (query-params page=pageMeta.first) class="button -blue -mini"}}First{{/link-to}}</li>
+    {{/if}}
+
+    {{#if showPrev}}
+      <li>{{#link-to linkTo (query-params page=pageMeta.prev) class="button -blue -mini"}}Prev{{/link-to}}</li>
+    {{/if}}
+
+    {{#if showNext}}
+      <li>{{#link-to linkTo (query-params page=pageMeta.next) class="button -blue -mini"}}Next{{/link-to}}</li>
+    {{/if}}
+
+    {{#if showLast}}
+      <li>{{#link-to linkTo (query-params page=pageMeta.last) class="button -blue -mini"}}Last{{/link-to}}</li>
+    {{/if}}
+  {{/if}}
+
+  {{#if showInfo}}
+    <li class="info">Page {{pageMeta.number}} / {{pageMeta.last}}</li>
+  {{/if}}
+</ul>
