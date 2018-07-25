@@ -1,0 +1,25 @@
+<div class="dashboard-repos-index">
+  <h1>Organizations of a user</h1>
+
+  <table>
+    <tr>
+      <th> Repository name </th>
+      <th> Description </th>
+      <th> Repository Url </th>
+    </tr>
+
+    {{#each model as |repo|}}
+    	<tr>
+        <td> {{repo.name}} </td>
+
+        {{#if model.desciption}}
+          <td> {{repo.desciption}} </td>
+        {{else}}
+          <td> No description </td>
+        {{/if}}
+
+        <td> {{repo.html_url}} </td>
+      </tr>
+    {{/each}}
+  </table>
+</div>
