@@ -1,0 +1,39 @@
+/**
+ * Paginated links:
+ * `.shopping-list` - Displayed at the top most part of the page.
+ *
+ *     @example
+ *     .button.-green Green
+ */
+
+.paginated-links {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  ul {
+    @include clearfix;
+
+    li {
+      // @include margin(null $small-spacing / 2 null null);
+      float: left;
+
+      &.info {
+        @include background($light-gray);
+        @include padding(4px $small-spacing 3px);
+        @include border-right-radius($base-border-radius);
+        @include size(120px auto);
+        text-align: center;
+        border: 1px solid $base-border-color;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      a {
+        border-right: 1px solid $white;
+        // @include padding($small-spacing / 2 $small-spacing);
+        // display: inline-block;
+        // border: 1px solid $blue;
+      }
+    }
+  }
+}

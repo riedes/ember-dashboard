@@ -1,0 +1,186 @@
+/**
+ * Forms:
+ *
+ * 1) Each row of form elements must be wrapped inside a div container.
+ *
+ * 2) Each input field element must be wrapped inside `div.field`.
+ *
+ *     @example
+ *     form
+ *       fieldset
+ *         h3 Fieldset
+ *         .name.-float.-three
+ *           label Name
+ *           .field
+ *             input(type="text", placeholder="First Name")
+ *           .field
+ *             input(type="text", placeholder="Middle Name")
+ *           .field
+ *             input(type="text", placeholder="Last Name")
+ *         .email
+ *           label.-required Email
+ *           .field
+ *             i.fa.fa-envelop
+ *             input(type="text", placeholder="Email")
+ *         .bio
+ *           label Bio
+ *           .field
+ *             textarea(placeholder="Enter a short description about yourself")
+ *         .lorem
+ *           label.-required.success Success text field
+ *           .field
+ *             input.success(type="text", placeholder="Lorem ipsum")
+ *         .lorem
+ *           label.-required.error Error text field
+ *           .field
+ *             input.error(type="text", placeholder="Lorem ipsum")
+ *         .lorem
+ *           label.-required.warning Warning text field
+ *           .field
+ *             input.warning(type="text", placeholder="Lorem ipsum")
+ *         .country
+ *           label.-required Select country
+ *           .field
+ *             select(name="country")
+ *               optgroup(label="Asia")
+ *                 option(value="1") Philippines
+ *                 option(value="2") Malaysia
+ *                 option(value="3") Singapore
+ *               optgroup(label="Americas")
+ *                 option(value="1") Los Angeles
+ *                 option(value="2") New York
+ *         .upload
+ *           .button.-green Upload file
+ *         .age
+ *           label(for="radio_buttons") Age
+ *           label
+ *             input(type="radio", name="radio_button" value="radio_1")
+ *             | 18 to 21
+ *           label
+ *             input(type="radio", name="radio_button" value="radio_2")
+ *             | 22 to 27
+ *           label
+ *             input(type="radio", name="radio_button" value="radio_3")
+ *             | 28 or above
+ *         .hobbies
+ *           label Hobbies
+ *           label
+ *             input(type="checkbox", name="checkboxes" checked=true value="check_1")
+ *             | Sports
+ *           label
+ *             input(type="checkbox", name="checkboxes" value="check_2")
+ *             | Computing
+ *           label
+ *             input(type="checkbox", name="checkboxes" value="check_3")
+ *             | Reading
+ *         .password
+ *           label.-required Password
+ *           .field
+ *             input(type="password", placeholder="Password")
+ *         .buttons
+ *           .button.-gray Back
+ *           .button.-green Submit
+ *         .errors
+ *           ul
+ *             li First name can't be blank
+ *             li Invalid email or password
+ */
+
+
+input[type="search"]           { @include appearance(none); box-sizing: border-box; }
+
+fieldset                       { background-color: lighten($gray, 5%); border: $base-border; @include margin(0); @include padding($base-spacing); }
+
+form > div,
+fieldset > div                 { @include margin(null null $small-spacing null);
+  label                        { font-weight: 600; margin-bottom: $small-spacing / 2;
+    &.-required::after         { content: "*"; color: $red; margin-left: $small-spacing / 3; }
+    &.success                  { color: $success-color; }
+    &.error                    { color: $error-color; }
+    &.warning                  { color: $warning-color; }
+    abbr                       { display: none; }
+  }
+
+  &.-float                     { @include clearfix;
+    .field                     { float: left; }
+    &.-two .field              { @include calc(width, "50% - #{$small-spacing}"); @include margin(null $small-spacing null null);
+      &:last-child             { width: 50%; @include margin(null 0 null null); }
+    }
+    &.-three .field            { @include calc(width, "33.33% - #{$small-spacing}"); @include margin(null $small-spacing null null);
+      &:last-child             { width: 33.33%; @include margin(null 0 null null); }
+    }
+    &.-four .field             { @include calc(width, "25% - #{$small-spacing}"); @include margin(null $small-spacing null null);
+      &:last-child             { width: 25%; @include margin(null 0 null null); }
+    }
+    &.-five .field             { @include calc(width, "20% - #{$small-spacing}"); @include margin(null $small-spacing null null);
+      &:last-child             { width: 20%; @include margin(null 0 null null); }
+    }
+    &.-six .field              { @include calc(width, "16.66% - #{$small-spacing}"); @include margin(null $small-spacing null null);
+      &:last-child             { width: 16.66%; @include margin(null 0 null null); }
+    }
+    &.-seven .field            { @include calc(width, "14.28% - #{$small-spacing}"); @include margin(null $small-spacing null null);
+      &:last-child             { width: 14.28%; @include margin(null 0 null null); }
+    }
+    &.-eight .field            { @include calc(width, "12.5% - #{$small-spacing}"); @include margin(null $small-spacing null null);
+      &:last-child             { width: 12.5%; @include margin(null 0 null null); }
+    }
+    &.-nine .field             { @include calc(width, "11.11% - #{$small-spacing}"); @include margin(null $small-spacing null null);
+      &:last-child             { width: 11.11%; @include margin(null 0 null null); }
+    }
+    &.-ten .field              { @include calc(width, "10% - #{$small-spacing}"); @include margin(null $small-spacing null null);
+      &:last-child             { width: 10%; @include margin(null 0 null null); }
+    }
+  }
+
+  input, label, select         { display: block; font-family: $base-font-family; font-size: $base-font-size; }
+
+  #{$all-text-inputs},
+  select[multiple=multiple],
+  textarea                     { background-color: $base-background-color; border: $base-border; border-radius: $base-border-radius; box-sizing: border-box; font-family: $base-font-family;
+                                 font-size: $base-font-size; padding: 10px 14px; width: 100%; @include transition(all 0.3s ease);
+    &:hover                    { }
+    &:focus                    { border-color: darken($base-border-color, 20%); outline: none; }
+    &.success                  { border: $success-border; background-color: $success-background-color; color: $success-color; }
+    &.error                    { border: $error-border; background-color: $error-background-color; color: $error-color; }
+    &.warning                  { border: $warning-border; background-color: $warning-background-color; color: $warning-color; }
+    &.-borderless              { border: none; }
+    &[disabled]                { background-color: $light-gray; }
+  }
+
+  textarea                     { resize: vertical; }
+
+  input[type="search"]         { @include appearance(none); }
+
+  input[type="checkbox"],
+  input[type="radio"]          { display: inline; margin-right: $small-spacing / 2; }
+
+  input[type="file"]           { padding-bottom: $small-spacing; width: 100%; }
+
+  select                       { width: 100%; }
+
+  .field                       { @include position(relative);
+    > .fa                      { color: darken($gray, 15%); @include position(absolute, 14px 14px null null); }
+    > .fa + input              { @include padding(10px 36px 10px 14px); }
+
+    &.list {
+      @include clearfix;
+
+      > div {
+        @include margin(null $small-spacing / 2 $small-spacing / 2 null);
+        float: left;
+      }
+    }
+  }
+
+  &.errors                     { @include padding(8px 12px); @include background($error-background-color); border: $error-border;
+                                 @include border-top-radius($base-border-radius); @include border-bottom-radius($base-border-radius);
+    &.-center li               { text-align: center; }
+    &.-borderless              { border: none; }
+
+    > ul                       {
+      > li                     { color: $error-color; }
+    }
+  }
+
+  &:last-child                 { @include margin(null null 0 null); }
+}

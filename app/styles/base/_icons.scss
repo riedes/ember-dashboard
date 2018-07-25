@@ -1,0 +1,27 @@
+/**
+ * Icons:
+ * `.fa.fa-motorcycle`, 'i.fa.fa-motorcycle.-reverse' - Using Font Awesome.
+ *
+ *     @example
+ *     i.fa.fa-camera-retro
+ *     i.fa.fa-bed
+ *     i.fa.buysellads
+ *     i.fa.fa-connectdevelop
+ *     i.fa.fa-dashcube
+ *     i.fa.fa-diamond
+ *     i.fa.fa-facebook-official
+ *     i.fa.fa-forumbee
+ *     i.fa.fa-heartbeat
+ *     i.fa.fa-hotel
+ *     i.fa.fa-leanpub
+ *     i.fa.fa-mars
+ *     i.fa.fa-mars-bubble
+ *     i.fa.fa-motorcycle.-reverse
+ */
+
+i.fa.-reverse {
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+}
