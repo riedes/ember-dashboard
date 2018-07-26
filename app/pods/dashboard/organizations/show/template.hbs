@@ -1,0 +1,75 @@
+<div class="dashboard-organizations-show">
+  <h1>Organization Detail</h1>
+
+  <table class="organization-details">
+    <tr>
+      <td>
+        <h5> NAME </h5>
+
+        {{#if model.name}}
+          <p> {{model.name}} </p>
+        {{else}}
+          <p> No name </p>
+        {{/if}}
+
+        <img src="{{model.avatar_url}}" height="50" width="50">
+      </td>
+
+      <td>
+        <h5> BLOG </h5>
+
+        {{#if model.blog}}
+          <p> {{model.blog}} </p>
+        {{else}}
+          <p> No blog </p>
+        {{/if}}
+      </td>
+
+      <td>
+        <h5> DESCRIPTION </h5>
+
+        {{#if model.description}}
+          <p> {{model.description}} </p>
+        {{else}}
+          <p> No description </p>
+        {{/if}}
+      </td>
+
+      <td>
+        <h5> COMPANY </h5>
+
+        {{#if model.company}}
+          <p> {{model.company}} </p>
+        {{else}}
+          <p> No company </p>
+        {{/if}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <h5> # OF FOLLOWERS </h5>
+
+        <p> {{model.followers}} </p>
+      </td>
+
+      <td>
+        <h5> # OF FOLLOWING </h5>
+
+        <p> {{model.following}} </p>
+      </td>
+
+      <td>
+        <h5> # OF MEMBERS </h5>
+
+        <p> {{model.members_url.length}} </p>
+      </td>
+
+      <td>
+        <h5> # OF REPOSITORIES </h5>
+
+        <p> {{model.repos_url.length}} </p>
+      </td>
+    </tr>
+  </table>
+</div>

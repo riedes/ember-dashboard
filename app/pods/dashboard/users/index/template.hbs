@@ -1,6 +1,6 @@
 <div class="dashboard-users-index">
   <h1>Users</h1>
-    {{paginated-links linkTo="dashboard.users.index"  pageMeta=model.meta.page}}
+    {{!-- {{paginated-links linkTo="dashboard.users.index"  pageMeta=model.meta.page}} --}}
   <table>
     <tr>
       <th>Username</th>
@@ -20,10 +20,7 @@
       </tr>
     {{/each}}
   </table>
-
-
 </div>
-
-<div class="pagination">
+{{!-- <div class="pagination">
   {{paginated-links linkTo="dashboard.users.index"  pageMeta=model.meta.page}}
-</div>
+</div> --}}

@@ -9,11 +9,11 @@ export default Route.extend({
       refreshModel: true
     }
   },
+
   model(params) {
     return this.store.query('organization', {
-      page: {
-        per_page: params.per_page
-      }
+      page: params.page,
+      per_page: params.per_page
     });
   }
 });

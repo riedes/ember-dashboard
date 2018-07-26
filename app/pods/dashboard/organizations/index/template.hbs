@@ -1,0 +1,22 @@
+<div class="dashboard-organizations-index">
+  <h1>Organizations</h1>
+
+  <table>
+    <tr>
+      <th> NAME </th>
+      <th> DESCRIPTION </th>
+    </tr>
+
+    {{#each model as |organization|}}
+      <tr>
+        <td> {{#link-to 'dashboard.organizations.show' organization.login}} {{organization.login}} {{/link-to}} </td>
+
+        {{#if organization.description}}
+          <td> {{organization.description}} </td>
+        {{else}}
+          <td> No description </td>
+        {{/if}}
+      </tr>
+    {{/each}}
+  </table>
+</div>
