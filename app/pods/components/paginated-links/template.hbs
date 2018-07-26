@@ -1,11 +1,11 @@
 <ul>
   {{#if model}}
     {{#if showFirst}}
-      <li>{{#link-to linkTo model.id (query-params page=pageMeta.first) class="button -blue -mini"}}First{{/link-to}}</li>
+      <li>{{#link-to linkTo model.id (query-params page=pageNumber.first) class="button -blue -mini"}}First{{/link-to}}</li>
     {{/if}}
 
     {{#if showPrev}}
-      <li>{{#link-to linkTo model.id (query-params page=pageMeta.prev) class="button -blue -mini"}}Prev{{/link-to}}</li>
+      <li>{{#link-to class="button -blue -mini"}}Prev{{/link-to}}</li>
     {{/if}}
 
     {{#if showNext}}

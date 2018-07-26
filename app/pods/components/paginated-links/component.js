@@ -5,15 +5,15 @@ import { computed } from '@ember/object';
 export default Component.extend({
   classNames: ['paginated-links'],
 
-  showFirst: computed('pageMeta.{first,number}', {
+  showFirst: computed('pageNumber.{first,number}', {
     get() {
-      return isPresent(this.get('pageMeta.first')) && this.get('pageMeta.number') > this.get('pageMeta.first');
+      return isPresent(this.get('pageNumber.first')) && this.get('pageNumber.number') > this.get('pageNumber.first');
     }
   }),
 
-  showPrev: computed('pageMeta.prev', {
+  showPrev: computed('page_number.prev', {
     get() {
-      return isPresent(this.get('pageMeta.prev'));
+      return isPresent(this.get('page_number.prev'));
     }
   }),
 
