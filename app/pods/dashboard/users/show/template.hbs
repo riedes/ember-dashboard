@@ -7,6 +7,8 @@
         <h5> USERNAME </h5>
 
         <p> {{model.login}} </p>
+
+        <img src="{{model.avatar_url}}" height="50" width="50">
       </td>
 
       <td>
@@ -56,6 +58,18 @@
           <p> {{model.bio}} </p>
         {{else}}
           <p> No bio </p>
+        {{/if}}
+      </td>
+
+      <td>
+        <h5> REPOS </h5>
+
+        {{#if model.repos_url}}
+          {{#link-to 'dashboard.users.repos' model.login}}
+            <p> {{model.repos_url.length}} </p>
+          {{/link-to}}
+        {{else}}
+          <p> No repo </p>
         {{/if}}
       </td>
     </tr>
