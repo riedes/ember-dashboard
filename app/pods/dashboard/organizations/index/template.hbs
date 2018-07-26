@@ -19,4 +19,8 @@
       </tr>
     {{/each}}
   </table>
+
+  {{!-- <div class="pagination"> --}}
+    {{paginated-links linkTo="dashboard.organizations.index"  pageNumber=model.page}}
+  {{!-- </div> --}}
 </div>
