@@ -8,17 +8,21 @@
       <th> Repository Url </th>
     </tr>
 
-    {{#each model as |repo|}}
+    {{#each model as |org|}}
     	<tr>
-        <td> {{repo.name}} </td>
+        <td> {{org.name}} </td>
 
-        {{#if model.desciption}}
-          <td> {{repo.desciption}} </td>
+        {{#if org.desciption}}
+          <td> {{org.desciption}} </td>
         {{else}}
           <td> No description </td>
         {{/if}}
 
-        <td> {{repo.html_url}} </td>
+        <td> {{org.html_url}} </td>
+      </tr>
+    {{else}}
+      <tr>
+        <td colspan="3" class="-center"> No orgs to show </td>
       </tr>
     {{/each}}
   </table>

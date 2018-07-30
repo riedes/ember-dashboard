@@ -18,6 +18,10 @@
         <td>{{user.repos_url.length}}</td>
         <td>{{user.subscriptions_url.length}}</td>
       </tr>
+    {{else}}
+      <tr>
+        <td colspan="5" class="-center"> No users to show </td>
+      </tr>
     {{/each}}
   </table>
 </div>
