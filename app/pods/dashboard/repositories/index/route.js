@@ -12,7 +12,6 @@ export default Route.extend({
   model(params) {
     return this.store.query('repository', {
       page: {
-        // number: params.page,
         per_page: params.per_page
       }
     });

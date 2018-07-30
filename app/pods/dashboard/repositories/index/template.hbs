@@ -15,6 +15,10 @@
       <td>{{repo.full_name}}</td>
       <td>{{repo.url}}</td>
     </tr>
+  {{else}}
+    <tr>
+      <td colspan="4" class="-center"> No repositories to show </td>
+    </tr>
   {{/each}}
 </table>
 

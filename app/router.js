@@ -8,7 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('dashboard', function() {
-    this.route('repositories');
+    this.route('repositories', function() { });
     this.route('users', function() {
       this.route('show', { path: ':user_login' });
       this.route('repos', { path: ':user_login/repos'}, function() { });

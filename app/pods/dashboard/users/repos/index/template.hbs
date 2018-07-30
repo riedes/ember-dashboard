@@ -20,6 +20,10 @@
 
         <td> {{repo.html_url}} </td>
       </tr>
+    {{else}}
+      <tr>
+        <td colspan="3"> No repos to show </td>
+      </tr>
     {{/each}}
   </table>
 </div>
